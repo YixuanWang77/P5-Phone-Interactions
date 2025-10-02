@@ -15,6 +15,8 @@
 let isCurrentlyTouching = false;  // Track if screen is being touched
 let touchCounter = 0;             // Count how many times screen has been touched
 let textColor;                    // Color of the text
+let touchStartTime = 0;           // When the current touch started (in milliseconds)
+let touchDuration = 0;            // How long the current touch has been active (in seconds)
 
 // ==============================================
 // SETUP FUNCTION - Runs once when page loads
@@ -42,11 +44,19 @@ function setup() {
 function draw() 
 {
     background(200, 255, 200);
+    
+    
     // Clear the screen each frame
     // Change background color based on touch state
     if (isCurrentlyTouching) 
     {
-        text("TOUCHED",width/2,height/2);  
+        touchDuration = (millis() - touchStartTime) / 1000;  // Convert to seconds
+        text("TOUCHED",width/2,height/2);
+        
+        // Display the touch duration
+        textSize(24);
+        text("Touch Time: " + touchDuration.toFixed(1) + "s", width/2, height/2 + 60);
+        textSize(48);  // Reset to original size
     } 
     else 
     {
@@ -69,7 +79,9 @@ function touchStarted()
 {
     isCurrentlyTouching = true;
     touchCounter = touchCounter + 1;  // Add 1 to our counter each time screen is touched
+    touchStartTime = millis();        // Record when this touch started
 
+    return false;
 }
 
 // This function runs when a touch ends (finger lifts off screen)
@@ -77,6 +89,7 @@ function touchEnded()
 {
     isCurrentlyTouching = false;
 
+    return false;
 }
 
 // ==============================================
@@ -89,6 +102,7 @@ function mousePressed()
 {
     isCurrentlyTouching = true;
     touchCounter = touchCounter + 1;  // Add 1 to counter for desktop testing too
+    touchStartTime = millis();        // Record when this touch started
 
     
 }

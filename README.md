@@ -54,14 +54,30 @@ A lightweight library that handles device permissions and gesture blocking for m
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mobile p5.js App</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile p5.js App</title>
+  
+  <!-- Basic CSS to remove browser defaults and align canvas -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
+  
+  <!-- Load p5.js library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.10/p5.min.js"></script>
+  
+  <!-- Load the mobile p5.js permissions library -->
   <script src="https://cdn.jsdelivr.net/npm/mobile-p5-permissions@1.4.2/dist/p5.mobile-permissions.min.js"></script>
+  
 </head>
 <body>
+  <!-- Load the p5.js sketch -->
   <script src="sketch.js"></script>
 </body>
 </html>
