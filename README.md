@@ -7,6 +7,10 @@
 
 **Easy-to-use permission handling for mobile p5.js projects**
 
+## 📱 [View Interactive Examples](https://digitalfuturesocadu.github.io/P5-Phone-Interactions/examples/)
+
+Explore live examples demonstrating touch interactions, device motion, audio input, and interactive GIF animations.
+
 A lightweight library that handles device permissions and gesture blocking for mobile web applications built with p5.js. It simplifies the management of iOS permission requests, Android compatibility issues, or unwanted browser gestures.
 
 ## Table of Contents
