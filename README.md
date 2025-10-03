@@ -111,6 +111,15 @@ function draw() {
     circle(width/2 + rotationY * 5, height/2 + rotationX * 5, 50);
   }
 }
+
+// Prevent default touch behavior (optional but recommended)
+function touchStarted() {
+  return false;
+}
+
+function touchEnded() {
+  return false;
+}
 ```
 
 ## API Reference
@@ -270,6 +279,11 @@ function draw() {
 ### Microphone Activation
 
 **Purpose:** Enable device microphone with user permission handling for audio-reactive applications.
+
+**⚠️ Important:** Microphone examples require the p5.sound library. Add this script tag to your HTML:
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.0/addons/p5.sound.min.js"></script>
+```
 
 **Commands:**
 - `enableMicTap(message)` - Tap anywhere on screen to enable microphone

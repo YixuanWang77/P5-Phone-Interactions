@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P5.js Mobile Interaction Examples</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #000;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .example-card {
+            border: 2px solid #000;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #fff;
+        }
+
+        .example-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 8px 8px 0 #000;
+        }
+
+        .example-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .example-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .example-link {
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border: 2px solid #000;
+            transition: background 0.2s, color 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .example-link:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .qr-code {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .qr-code canvas {
+            border: 2px solid #000;
+            padding: 10px;
+            background: white;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid #000;
+            text-align: center;
+            color: #666;
+        }
+
+        footer a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>P5.js Mobile Interaction Examples</h1>
+        <p class="subtitle">Interactive examples demonstrating mobile device capabilities with p5.js</p>
+
+        <!-- Touch Examples -->
+        <div class="section">
+            <h2 class="section-title">Touch Interactions</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-title">01. Basic Touch</div>
+                    <p class="example-description">Detect touch events and track duration</p>
+                    <a href="Phone Sensor Examples/touch/01_touch_basic/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-touch-01"></div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-title">02. Touch Zones</div>
+                    <p class="example-description">Screen divided into 4 interactive zones</p>
+                    <a href="Phone Sensor Examples/touch/02_touch_zones/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-touch-02"></div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-title">03. Touch Count</div>
+                    <p class="example-description">Count simultaneous touch points</p>
+                    <a href="Phone Sensor Examples/touch/03_touch_count/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-touch-03"></div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-title">04. Touch Distance</div>
+                    <p class="example-description">Measure distance between two touches</p>
+                    <a href="Phone Sensor Examples/touch/04_touch_distance/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-touch-04"></div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-title">05. Touch Angle</div>
+                    <p class="example-description">Calculate angle between two touch points</p>
+                    <a href="Phone Sensor Examples/touch/05_touch_angle/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-touch-05"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Movement Examples -->
+        <div class="section">
+            <h2 class="section-title">Device Motion</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-title">01. Orientation</div>
+                    <p class="example-description">Basic device orientation detection</p>
+                    <a href="Phone Sensor Examples/movement/01_orientation_basic/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-movement-01"></div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-title">02. Rotational Velocity</div>
+                    <p class="example-description">Calculate rotation speed using sensors</p>
+                    <a href="Phone Sensor Examples/movement/02_rotational_velocity/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-movement-02"></div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-title">03. Acceleration</div>
+                    <p class="example-description">Display device acceleration data</p>
+                    <a href="Phone Sensor Examples/movement/03_acceleration/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-movement-03"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Microphone Examples -->
+        <div class="section">
+            <h2 class="section-title">Audio Input</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-title">01. Microphone Level</div>
+                    <p class="example-description">Visualize audio input with threshold</p>
+                    <a href="Phone Sensor Examples/microphone/01_mic_level/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-mic-01"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phone and GIF Examples -->
+        <div class="section">
+            <h2 class="section-title">Interactive GIF Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-title">Fetch</div>
+                    <p class="example-description">Touch-controlled corgi fetching animation</p>
+                    <a href="Phone and Gif/fetch/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-gif-fetch"></div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-title">Roll</div>
+                    <p class="example-description">Tilt-controlled pencil rolling animation</p>
+                    <a href="Phone and Gif/roll/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-gif-roll"></div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-title">Fly</div>
+                    <p class="example-description">Acceleration-controlled airplane window</p>
+                    <a href="Phone and Gif/fly/" class="example-link">Launch Example →</a>
+                    <div class="qr-code" id="qr-gif-fly"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with <a href="https://p5js.org/" target="_blank">p5.js</a> and <a href="https://github.com/DigitalFuturesOCADU/mobile-p5-permissions" target="_blank">mobile-p5-permissions</a></p>
+            <p>© 2025 Digital Futures OCADU</p>
+        </footer>
+    </div>
+
+    <script>
+        // Generate QR codes for all examples
+        const baseURL = 'https://digitalfuturesocadu.github.io/P5-Phone-Interactions/examples/';
+        
+        const examples = [
+            { id: 'qr-touch-01', url: 'Phone%20Sensor%20Examples/touch/01_touch_basic/' },
+            { id: 'qr-touch-02', url: 'Phone%20Sensor%20Examples/touch/02_touch_zones/' },
+            { id: 'qr-touch-03', url: 'Phone%20Sensor%20Examples/touch/03_touch_count/' },
+            { id: 'qr-touch-04', url: 'Phone%20Sensor%20Examples/touch/04_touch_distance/' },
+            { id: 'qr-touch-05', url: 'Phone%20Sensor%20Examples/touch/05_touch_angle/' },
+            { id: 'qr-movement-01', url: 'Phone%20Sensor%20Examples/movement/01_orientation_basic/' },
+            { id: 'qr-movement-02', url: 'Phone%20Sensor%20Examples/movement/02_rotational_velocity/' },
+            { id: 'qr-movement-03', url: 'Phone%20Sensor%20Examples/movement/03_acceleration/' },
+            { id: 'qr-mic-01', url: 'Phone%20Sensor%20Examples/microphone/01_mic_level/' },
+            { id: 'qr-gif-fetch', url: 'Phone%20and%20Gif/fetch/' },
+            { id: 'qr-gif-roll', url: 'Phone%20and%20Gif/roll/' },
+            { id: 'qr-gif-fly', url: 'Phone%20and%20Gif/fly/' }
+        ];
+
+        examples.forEach(example => {
+            const fullURL = baseURL + example.url;
+            QRCode.toCanvas(
+                document.getElementById(example.id),
+                fullURL,
+                {
+                    width: 150,
+                    margin: 1,
+                    color: {
+                        dark: '#000000',
+                        light: '#ffffff'
+                    }
+                },
+                function (error) {
+                    if (error) console.error(error);
+                }
+            );
+        });
+    </script>
+</body>
+</html>

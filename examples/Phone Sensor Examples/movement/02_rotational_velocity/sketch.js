@@ -142,11 +142,3 @@ function touchEnded()
     return false;
 }
 
-// ==============================================
-// WINDOW RESIZE FUNCTION
-// ==============================================
-function windowResized() 
-{
-    // Resize canvas when window size changes
-    resizeCanvas(windowWidth, windowHeight);
-}
