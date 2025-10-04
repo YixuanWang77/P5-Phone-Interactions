@@ -19,6 +19,9 @@ function setup()
     
     // Lock mobile gestures
     lockGestures();
+
+    // Set to show in Degrees
+    angleMode(DEGREES);
     
     debug("Rotational Velocity - Minimal Version");
     debug("Move your device quickly to see velocity");
@@ -52,19 +55,7 @@ function draw()
         debug("Velocity Z: " + nf(velocityZ, 1, 2) + "°/frame");
         debug("Total Velocity: " + nf(totalVelocity, 1, 2) + "°/frame");
         
-        // Add movement indicators
-        if (totalVelocity > 1) 
-        {
-            debug("MOVING FAST!");
-        }
-        else if (totalVelocity > 0.5) 
-        {
-            debug("Moving moderately");
-        }
-        else 
-        {
-            debug("Still or slow movement");
-        }
+
         
         // Store current rotation for next frame
         prevRotationX = currentX;

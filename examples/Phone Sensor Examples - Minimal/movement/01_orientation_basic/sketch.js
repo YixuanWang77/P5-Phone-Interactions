@@ -14,6 +14,9 @@ function setup()
     
     // Lock mobile gestures
     lockGestures();
+
+    // Set to show in Degrees
+    angleMode(DEGREES);
     
     debug("Orientation Basic - Minimal Version");
     debug("Tilt your device to see orientation values");
@@ -38,12 +41,7 @@ function draw()
         debug("Rotation Y (Tilt Left/Right): " + int(ry) + "°");
         debug("Rotation Z (Turn/Compass): " + int(rz) + "°");
         
-        // Add helpful descriptions
-        if (rx > 10) debug("  Tilted BACKWARD");
-        else if (rx < -10) debug("  Tilted FORWARD");
-        
-        if (ry > 10) debug("  Tilted RIGHT");
-        else if (ry < -10) debug("  Tilted LEFT");
+
     }
     else 
     {
