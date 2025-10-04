@@ -1,24 +1,36 @@
-# Mobile p5.js Permissions
+# P5.js on Mobile
 
 [![CI](https://github.com/DigitalFuturesOCADU/mobile-p5-permissions/workflows/CI/badge.svg)](https://github.com/DigitalFuturesOCADU/mobile-p5-permissions/actions)
 [![npm version](https://badge.fury.io/js/mobile-p5-permissions.svg)](https://badge.fury.io/js/mobile-p5-permissions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Pages](https://img.shields.io/badge/Demo-Live%20Examples-blue)](https://digitalfuturesocadu.github.io/mobile-p5-permissions/)
 
-**Easy-to-use permission handling for mobile p5.js projects**
+# Overview
+P5.js on mobile provides unique opportunities and challenges. This page outlines the methods for using the P5 Mobile permissions library that
+- Simplifies accessing phone hardware from the browser (accelerometers, gyroscopes, microphone)
+- Simplifies disabling default phone gestures (Zoom, refresh, back, etc)
+- Simplifies using an on-screen console to display errors and debug info
 
-## 📱 [View Interactive Examples](https://digitalfuturesocadu.github.io/P5-Phone-Interactions/examples/)
 
-Explore live examples demonstrating touch interactions, device motion, audio input, and interactive GIF animations.
+##  [Link for Interactive Examples](https://digitalfuturesocadu.github.io/P5-Phone-Interactions/examples/homepage)
+This page provides a link to live examples as well as the code on github
 
-A lightweight library that handles device permissions and gesture blocking for mobile web applications built with p5.js. It simplifies the management of iOS permission requests, Android compatibility issues, or unwanted browser gestures.
+## Browser Compatibility
+
+- iOS 13+ (Safari)
+- Android 7+ (Chrome)
+- Chrome 80+
+- Safari 13+
+- Firefox 75+
 
 ## Table of Contents
 
-- [Features](#features)
-- [Quick Start](#quick-start)
-  - [CDN (Recommended)](#cdn-recommended)
-  - [Basic Setup](#basic-setup)
+- [Link for Interactive Examples](#link-for-interactive-examples)
+- [Browser Compatibility](#browser-compatibility)
+- [CDN (Recommended)](#cdn-recommended)
+- [Basic Setup](#basic-setup)
+  - [Index HTML](#index-html)
+  - [p5.js](#p5js)
 - [API Reference](#api-reference)
   - [Core Functions](#core-functions)
   - [Status Variables](#status-variables)
@@ -26,21 +38,6 @@ A lightweight library that handles device permissions and gesture blocking for m
   - [Motion Sensor Activation](#motion-sensor-activation)
   - [Microphone Activation](#microphone-activation)
   - [Debug System](#debug-system)
-- [Examples](#examples)
-- [Installation Options](#installation-options)
-- [Browser Compatibility](#browser-compatibility)
-- [About](#about)
-- [License](#license)
-
-## Features
-
-- Cross-platform compatibility - Works on iOS and Android
-- Comprehensive gesture blocking - Prevents unwanted mobile browser behaviors
-- Simple implemtation in P5
-- On-screen debug system with timestamps
-- Interactive examples and demos
-
-## Quick Start
 
 ### CDN (Recommended)
 
@@ -156,7 +153,7 @@ debugWarn(...args)  // Display warnings with yellow styling
 debug.clear()     // Clear debug messages
 ```
 
-**📋 p5.js Namespace Support**: All functions are also available as `p5.prototype` methods:
+**p5.js Namespace Support**: All functions are also available as `p5.prototype` methods:
 ```javascript
 // You can use either syntax:
 lockGestures();          // Global function (recommended)
@@ -243,16 +240,16 @@ enableGyroButton('Enable Motion');
 
 | Variable | Description | Range/Units |
 |----------|-------------|-------------|
-| `rotationX` | Device tilt forward/backward | -180° to 180° |
-| `rotationY` | Device tilt left/right | -180° to 180° |
-| `rotationZ` | Device rotation around screen | -180° to 180° |
-| `accelerationX` | Acceleration left/right | m/s² |
-| `accelerationY` | Acceleration up/down | m/s² |
-| `accelerationZ` | Acceleration forward/back | m/s² |
-| `deviceShaken` | Shake detection event | true when shaken |
-| `deviceMoved` | Movement detection event | true when moved |
+| [`rotationX`](https://p5js.org/reference/p5/rotationX/) | Device tilt forward/backward | -180° to 180° |
+| [`rotationY`](https://p5js.org/reference/p5/rotationY/) | Device tilt left/right | -180° to 180° |
+| [`rotationZ`](https://p5js.org/reference/p5/rotationZ/) | Device rotation around screen | -180° to 180° |
+| [`accelerationX`](https://p5js.org/reference/p5/accelerationX/) | Acceleration left/right | m/s² |
+| [`accelerationY`](https://p5js.org/reference/p5/accelerationY/) | Acceleration up/down | m/s² |
+| [`accelerationZ`](https://p5js.org/reference/p5/accelerationZ/) | Acceleration forward/back | m/s² |
+| [`deviceShaken`](https://p5js.org/reference/p5/deviceShaken/) | Shake detection event | true when shaken |
+| [`deviceMoved`](https://p5js.org/reference/p5/deviceMoved/) | Movement detection event | true when moved |
 
-**⚠️ Important:** All motion sensor variables, including `deviceShaken` and `deviceMoved`, are only available when `window.sensorsEnabled` is true. Always check this status before using any motion data.
+**Important:** All motion sensor variables, including `deviceShaken` and `deviceMoved`, are only available when `window.sensorsEnabled` is true. Always check this status before using any motion data.
 
 **Example:**
 ```javascript
@@ -284,7 +281,7 @@ function draw() {
 
 **Purpose:** Enable device microphone with user permission handling for audio-reactive applications.
 
-**⚠️ Important:** Microphone examples require the p5.sound library. Add this script tag to your HTML:
+**Important:** Microphone examples require the p5.sound library. Add this script tag to your HTML:
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.0/addons/p5.sound.min.js"></script>
 ```
@@ -306,12 +303,26 @@ enableMicButton('Enable Audio');
 
 | Variable | Description | Range |
 |----------|-------------|-------|
-| `mic.getLevel()` | Current audio input level | 0.0 to 1.0 |
+| [`p5.AudioIn()`](https://p5js.org/reference/p5.sound/p5.AudioIn/) | Audio input object (stored in `mic`) | Object |
+| [`mic.getLevel()`](https://p5js.org/reference/p5.sound/p5.AudioIn/getLevel/) | Current audio input level | 0.0 to 1.0 |
 
 **Example:**
 ```javascript
+let mic;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  
+  // Create a new p5.AudioIn() instance
+  mic = new p5.AudioIn();
+  
+  // Enable microphone with tap
+  enableMicTap();
+}
+
 function draw() {
   if (window.micEnabled) {
+    // The mic object is a p5.AudioIn() instance
     // Audio-reactive visualization
     let level = mic.getLevel();
     let size = map(level, 0, 1, 10, 200);
@@ -374,53 +385,4 @@ debug("Touch points:", touches);
 debug({rotation: rotationX, acceleration: accelerationX});
 ```
 
-
-## Examples
-
-### [Interactive Examples and Demos](https://digitalfuturesocadu.github.io/mobile-p5-permissions/)
-
-Explore our comprehensive collection of examples demonstrating mobile interaction patterns:
-
-**UX Comparison Examples:**
-- Button Examples - Compare traditional buttons vs device capabilities (shake detection, movement, orientation)
-- Slider Examples - Compare traditional sliders vs mobile interactions (rotation, acceleration, microphone, multi-touch, distance, angle)
-
-**Other Demos:**
-- Microphone Demo - Audio visualization using device microphone
-- Gyroscope Demo - Tilt-based game using motion sensors
-
-Each example includes QR codes for easy mobile testing and demonstrates both traditional UI patterns and mobile-specific interactions.
-
-## Installation Options
-
-### CDN (Recommended)
-```html
-<!-- Link to permissions library -->
-<script src="https://cdn.jsdelivr.net/npm/mobile-p5-permissions@1.4.2/dist/p5.mobile-permissions.min.js"></script>
-
-```
-
-### npm
-```bash
-npm install mobile-p5-permissions
-```
-
-### Download
-Download from [GitHub Releases](https://github.com/DigitalFuturesOCADU/mobile-p5-permissions/releases)
-
-## Browser Compatibility
-
-- iOS 13+ (Safari)
-- Android 7+ (Chrome)
-- Chrome 80+
-- Safari 13+
-- Firefox 75+
-
-## About
-
-This library was created by Nick Puckett [https://github.com/npuckett](https://github.com/npuckett).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
