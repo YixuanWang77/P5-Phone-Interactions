@@ -4,11 +4,12 @@
 This page provides a link to live examples as well as the code on github
 
 # Overview
-P5.js on mobile provides unique opportunities and challenges. The main P5 framework does an excellent job of making it easy to read data from a various phone inputs and sensors, however it doesn't deal with the realities of contemporary browser's built in gestures and security protocols.
+P5.js on mobile provides unique opportunities and challenges. The main P5 framework does an excellent job of making it easy to read data from various phone inputs and sensors, however it doesn't deal with the realities of contemporary browser's built in gestures and security protocols.
 That's where this library comes in:
 
 - Simplifies accessing phone hardware from the browser (accelerometers, gyroscopes, microphone)
 - Simplifies disabling default phone gestures (Zoom, refresh, back, etc)
+- Simplifies enabling audio output
 - Simplifies using an on-screen console to display errors and debug info
 
 ## p5 commands
