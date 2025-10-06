@@ -1,5 +1,8 @@
 # P5.js on Mobile
 
+##  [Link for Interactive Examples](https://digitalfuturesocadu.github.io/P5-Phone-Interactions/examples/homepage)
+This page provides a link to live examples as well as the code on github
+
 # Overview
 P5.js on mobile provides unique opportunities and challenges. The main P5 framework does an excellent job of making it easy to read data from a various phone inputs and sensors, however it doesn't deal with the realities of contemporary browser's built in gestures and security protocols.
 That's where this library comes in:
@@ -25,9 +28,6 @@ This library simplifies access to the following p5.js mobile sensor and audio co
 **Audio Input (requires p5.sound):**
 - [`p5.AudioIn()`](https://p5js.org/reference/p5.sound/p5.AudioIn/) - Audio input object
 - [`getLevel()`](https://p5js.org/reference/p5.sound/p5.AudioIn/getLevel/) - Current audio input level
-
-##  [Link for Interactive Examples](https://digitalfuturesocadu.github.io/P5-Phone-Interactions/examples/homepage)
-This page provides a link to live examples as well as the code on github
 
 ## Browser Compatibility
 
