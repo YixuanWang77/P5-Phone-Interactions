@@ -92,32 +92,3 @@ function touchEnded()
     return false;
 }
 
-// ==============================================
-// MOUSE EVENTS FOR DESKTOP TESTING
-// ==============================================
-// These functions allow the example to work on desktop too
-// for easier testing during development
-
-function mousePressed()
-{
-    isCurrentlyTouching = true;
-    touchCounter = touchCounter + 1;  // Add 1 to counter for desktop testing too
-    touchStartTime = millis();        // Record when this touch started
-
-    
-}
-
-function mouseReleased() 
-{
-    isCurrentlyTouching = false;
-
-}
-
-// ==============================================
-// WINDOW RESIZE HANDLER
-// ==============================================
-// This function runs when the screen orientation changes
-// or the browser window is resized
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-}

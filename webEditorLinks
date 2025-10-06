@@ -1,0 +1,38 @@
+# P5.js Web Editor Links for Phone Sensor Examples
+
+Add the p5.js web editor URLs next to each example below.
+Format: Example Name: [your-web-editor-url-here]
+
+
+## Blank Template
+blankTemplate: [https://editor.p5js.org/creationcomputation/sketches/R-c_HpeUg]
+
+## Touch Examples
+
+01_touch_basic: [https://editor.p5js.org/creationcomputation/sketches/zIRMsYKRN]
+
+02_touch_zones: [https://editor.p5js.org/creationcomputation/sketches/PkhKKZWMC]
+
+03_touch_count: [https://editor.p5js.org/creationcomputation/sketches/g-9HeBb8B]
+
+04_touch_distance: [https://editor.p5js.org/creationcomputation/sketches/s6icb8y_o]
+
+05_touch_angle: [https://editor.p5js.org/creationcomputation/sketches/IPYIo8_FV]
+
+
+## Movement Examples
+
+01_orientation_basic: [https://editor.p5js.org/creationcomputation/sketches/Sf_um9wYw]
+
+02_rotational_velocity: [https://editor.p5js.org/creationcomputation/sketches/IDSid9rOX]
+
+03_acceleration: [https://editor.p5js.org/creationcomputation/sketches/xaxOYgK9q]
+
+
+## Microphone Examples
+
+01_mic_level: [https://editor.p5js.org/creationcomputation/sketches/ySuEk7s6-]
+
+
+---
+Once you've added all the URLs above, let me know and I'll add them to the homepage.
