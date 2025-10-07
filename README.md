@@ -27,8 +27,10 @@ This library simplifies access to the following p5.js mobile sensor and audio co
 - [`accelerationX`](https://p5js.org/reference/p5/accelerationX/) - Acceleration left/right
 - [`accelerationY`](https://p5js.org/reference/p5/accelerationY/) - Acceleration up/down
 - [`accelerationZ`](https://p5js.org/reference/p5/accelerationZ/) - Acceleration forward/back
-- [`deviceShaken`](https://p5js.org/reference/p5/deviceShaken/) - Shake detection event
-- [`deviceMoved`](https://p5js.org/reference/p5/deviceMoved/) - Movement detection event
+- [`deviceShaken()`](https://p5js.org/reference/p5/deviceShaken/) - Shake detection event
+- [`deviceMoved()`](https://p5js.org/reference/p5/deviceMoved/) - Movement detection event
+- [`setShakeThreshold()`](https://p5js.org/reference/p5/setShakeThreshold/) - Set shake detection sensitivity
+- [`setMoveThreshold()`](https://p5js.org/reference/p5/setMoveThreshold/) - Set movement detection sensitivity
 
 **Audio Input (requires p5.sound):**
 - [`p5.AudioIn()`](https://p5js.org/reference/p5.sound/p5.AudioIn/) - Audio input object
