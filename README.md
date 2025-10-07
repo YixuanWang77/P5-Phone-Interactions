@@ -16,6 +16,10 @@ That's where this library comes in:
 
 This library simplifies access to the following p5.js mobile sensor and audio commands:
 
+**Touch Events:**
+- [`touchStarted()`](https://p5js.org/reference/p5/touchStarted/) - Called when a touch begins
+- [`touchEnded()`](https://p5js.org/reference/p5/touchEnded/) - Called when a touch ends
+
 **Device Motion & Orientation:**
 - [`rotationX`](https://p5js.org/reference/p5/rotationX/) - Device tilt forward/backward
 - [`rotationY`](https://p5js.org/reference/p5/rotationY/) - Device tilt left/right
